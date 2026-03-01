@@ -15,3 +15,12 @@ Permite construir interfaces dinamicas y reactivas usando solo PHP.
 ```bash
 php artisan jetstream:livewire
 ```
+
+## laravel lang
+
+Cambiar el idioma por defecto de las vistas
+
+```bash
+composer require laravel-lang/common
+php artisan lang:add es
+```
