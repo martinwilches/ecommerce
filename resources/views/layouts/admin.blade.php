@@ -50,6 +50,9 @@
     </div>
 
     @livewireScripts
+
+    {{-- recibir codigo js enviado ejecutado desde las vistas hijas --}}
+    @stack('js')
 </body>
 
 </html>

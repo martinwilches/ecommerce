@@ -5,10 +5,10 @@
     ],
     [
         'name' => 'Familias',
-        'route' => route('admin.families.index')
+        'route' => route('admin.families.index'),
     ],
     [
-        'name' => 'Nuevo'
+        'name' => 'Nuevo',
     ],
 ]">
     <div class="card">
@@ -16,7 +16,8 @@
             @csrf
             <div class="mb-4">
                 <x-label class="mb-2">Nombre</x-label>
-                <x-input class="w-full" placeholder="Por favor ingrese el nombre de la familia" name="name" value="{{ old('name') }}"></x-input>
+                <x-input class="w-full" placeholder="Por favor ingrese el nombre de la familia" name="name"
+                    value="{{ old('name') }}"></x-input>
             </div>
 
             <div class="flex justify-end">

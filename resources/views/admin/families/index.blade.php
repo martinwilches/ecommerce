@@ -9,8 +9,7 @@
 ]">
     {{-- slot con nombre --}}
     <x-slot name="action">
-        <a href="{{ route('admin.families.create') }}" type="button"
-            class="btn btn-blue">Nuevo</a>
+        <a href="{{ route('admin.families.create') }}" type="button" class="btn btn-blue">Nuevo</a>
     </x-slot>
 
     @if (count($families))
@@ -24,9 +23,7 @@
                         <th scope="col" class="px-6 py-3">
                             Nombre
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            {{-- Editar --}}
-                        </th>
+                        <th scope="col" class="px-6 py-3"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,10 +36,10 @@
                                 {{ $family->name }}
                                 </th>
                             <td class="px-6 py-4">
-                                <a href="{{ route('admin.families.edit', $family) }}">
+                                <a href="{{ route('admin.families.edit', $family) }}" class="btn btn-blue">
                                     Editar
                                 </a>
-                                </th>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

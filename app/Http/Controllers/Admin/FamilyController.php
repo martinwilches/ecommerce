@@ -45,7 +45,7 @@ class FamilyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(family $family)
+    public function show(Family $family)
     {
         //
     }
@@ -53,24 +53,32 @@ class FamilyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(family $family)
+    public function edit(Family $family)
     {
-        //
+        return view('admin.families.edit', compact('family'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, family $family)
+    public function update(Request $request, Family $family)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $family->update($request->all());
+
+        return redirect()->route('admin.families.edit', $family);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(family $family)
+    public function destroy(Family $family)
     {
-        //
+        $family->delete();
+
+        return redirect()->route('admin.families.index');
     }
 }
