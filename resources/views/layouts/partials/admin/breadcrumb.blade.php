@@ -4,7 +4,7 @@
             <ol class="flex flex-wrap">
                 @foreach ($breadcrumbs as $breadcrumb)
                     <li
-                        class="text-sm leading-normal mr-2 text-slate-700 {{ !$loop->first ? 'before:float-left before:content-["/"] before:pr-2' : '' }}">
+                        class="text-sm leading-normal mr-2 text-slate-700 dark:text-white {{ !$loop->first ? 'before:float-left before:content-["/"] before:pr-2' : '' }}">
                         @isset($breadcrumb['route'])
                             <a href="{{ $breadcrumb['route'] }}" class="opacity-50">{{ $breadcrumb['name'] }}</a>
                         @else
@@ -15,7 +15,7 @@
             </ol>
 
             @if (count($breadcrumbs) > 1)
-                <h6 class="font-bold">
+                <h6 class="font-bold dark:text-white">
                     {{-- acceder al ultimo elemento de un array --}}
                     {{ end($breadcrumbs)['name'] }}
                 </h6>
